@@ -33,7 +33,7 @@ public class TransferServiceImpl implements TransferService {
 	private static final Logger logger = LoggerFactory.getLogger(TransferServiceImpl.class);
 
 	/**
-	 * @author Karthika T
+	 * @author Vinod B N
 	 * 
 	 *         Method transfer fund from one recipient to another recipient
 	 * 
@@ -84,7 +84,6 @@ public class TransferServiceImpl implements TransferService {
 	}
 
 	@Scheduled(fixedDelay = 300000)
-	// @Scheduled(cron = "0 0 0/30 * * ?")
 	public void completeTransfer() {
 		List<Transaction> transactions = transactionRepository
 				.findAllByTransactionStatus(ApplicationConstant.PENDING_STATUS);
