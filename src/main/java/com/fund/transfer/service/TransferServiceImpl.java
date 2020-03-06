@@ -95,7 +95,6 @@ public class TransferServiceImpl implements TransferService {
 				transactionRepository.save(transaction);
 				return;
 			}
-			
 			transaction.setTransactionStatus(ApplicationConstant.COMPLETED);
 			Double fromAccBal = fromAcc.getBalance() - transaction.getTranferAmount();
 			Double toAccBal = toAcc.getBalance() + transaction.getCalculatedAmount();
